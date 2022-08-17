@@ -1,2 +1,78 @@
-# Android-
-# wallabag - Android App ![Build status](https://github.com/wallabag/android-app/workflows/CI/badge.svg?branch=master)  &lt;img src="/readme/wallabag logo.png" align="left" width="200" hspace="10" vspace="10">  wallabag is a self-hosted read-it-later app.   Unlike other services, wallabag is free and open source.   wallabag for Android is a companion app for [wallabag](https://www.wallabag.org). You need a wallabag account first, which you are going to use in this app.  wallabag is available on the Google Play Store and F-Droid.  &lt;p align="left"> &lt;a href="https://play.google.com/store/apps/details?id=fr.gaulupeau.apps.InThePoche">     &lt;img alt="Get it on Google Play"         height="80"         src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" /> &lt;/a>   &lt;a href="https://f-droid.org/app/fr.gaulupeau.apps.InThePoche">     &lt;img alt="Get it on F-Droid"         height="80"         src="https://f-droid.org/badge/get-it-on.png" />         &lt;/a>         &lt;/p>  ## About  wallabag has been made for you to comfortably read and archive your articles. You can download wallabag from wallabag.org and follow the instructions to install it on your own server. Alternatively, you can directly sign up for [wallabag.it](https://wallabag.it).  This android application allows you to put a link in your wallabag instance, letting you read your wallabag links offline.  This application was originally created by Jonathan GAULUPEAU and released under the GNU GPLv3. wallabag is a creation from Nicolas Lœuillet released under the MIT License (Expat License).  ## Features  The android app lets you: - Connect to your self-hosted wallabag instance or connect to your [wallabag.it](https://wallabag.it) account. - Supports wallabag 2.0 and higher. - Completely ad-free. - Increase and decrease the size of the font and also switch between a serif or sans-serif font for a more comfortable reading experience. - Switch between numerous themes. - Possibility to cache images locally for offline reading. - Get articles read via Text-to-Speech feature. - Needs no special permissions on Android 6.0+.  ## Screenshots  [&lt;img src="/readme/Wallabag%20Reading%20List.png" align="left" width="200"     hspace="10" vspace="10">](/readme/Wallabag%20Reading%20List.png) [&lt;img src="/readme/Wallabag%20Article%20View.png" align="center" width="200"     hspace="10" vspace="10">](/readme/Wallabag%20Article%20View.png)  ## Permissions  On Android versions prior to Android 6.0, wallabag requires the following permissions: - Full Network Access. - View Network Connections. - Run at startup. - Read and write access to external storage.  The "Run at startup" permission is only used if Auto-Sync feature is enabled and is not utilised otherwise. The network access permissions are made use of for downloading content. The external storage permission is used to cache article images for viewing offline.  ## Contributing  wallabag app is a free and open source project developed by volunteers. Any contributions are welcome. Here are a few ways you can help:  * [Report bugs and make suggestions.](https://github.com/wallabag/android-app/issues)  * [Translate the app](https://hosted.weblate.org/projects/wallabag/android-app/) (you don't have to create an account).  * Write some code. Please follow the code style used in the project to make a review process faster.  ## License  This application is released under GNU GPLv3 (see [LICENSE](LICENSE)). Some of the used libraries are released under different licenses.
+Google Play game services - Android Samples
+===========================================
+Copyright (C) 2014 Google Inc.
+
+<h2>Contents</h2>
+
+These are the Android samples for Google Play game services.
+
+* **CollectAllTheStars2**. Demonstrates how to use the Snapshots feature to save game data. The sample signs the user in, synchronizes their data from a named Snapshot, then updates the UI to reflect the game state saved in the Snapshot.
+
+* **TypeANumber**. Demonstrates how to use leaderboards, achievements, events, and friends. In this exciting game, you type the score you think you deserve. But wait! There is a twist. If you are playing in easy mode, you get the score you requested. However, if you are playing in hard mode, you only get half! (tough game, we know). You can also check how your friends perform in this game by checking out social leaderboards.
+
+<h2>How to run a sample</h2>
+
+1. Set up the project in the Developer Console by following [these instructions](https://developers.google.com/games/services/console/enabling).
+   Note your **package name** and the **application ID** of the project!
+
+1. For the **Type a Number sample**, you need to create leaderboards/achievements.
+(You can see the ones that the sample needs in its [res/values/ids.xml](TypeANumber/src/main/res/values/ids.xml) file.)
+  You can create them two ways:
+   1. Add them via the [Developer console](https://play.google.com/apps/publish/#GameListPlace).
+   1. Use [this utility](http://playgameservices.github.io/android-basic-samples/config-magic/index.html?sample=typeanumber), which will automatically create them for you.
+
+<h3>Building using Android Studio...</h3>
+
+1. Open Android Studio and launch the Android SDK manager from it (Tools | Android | SDK Manager)
+1. Ensure the following components are installed and updated to the latest version.
+   1. *Android SDK Platform-Tools*
+   1. *Android Support Repository*
+   1. *Google Repository*
+1. Return to Android Studio and select *Open an existing Android Studio project*
+1. Select the **android-basic-samples** directory.
+
+<h3>Modify IDs, compile and run</h3>
+
+To set up a sample:
+
+1. Change the *applicationId* in the build.gradle file to your own **package name** (ie - com.example.package.name)
+   (the same one you registered in Developer Console!).  You will have to update
+   the build.gradle file for *each* sample you want to run.  There is no need to
+   edit the AndroidManifest.xml file.
+1. In the Developer console, select a resource type
+   (Achievements, Events, Leaderboards) and click "Get Resources".  Copy the
+    contents from the console and replace the contents of res/values/ids.xml.
+    1.  If you are running Android Studio, check the TODO window to see if there are any remaining tasks.
+1. Compile and run.
+
+**IMPORTANT**: make sure to sign your apk with the same certificate
+as the one whose fingerprint you configured on Developer Console, otherwise
+you will see errors.
+
+**IMPORTANT**: if you are testing an unpublished game, make sure that the account you intend
+to sign in with (the account on the test device) is listed as a tester in the
+project on your Developer Console setup (check the list in the "Testing"
+section), otherwise the server will act as though your project did not exist and
+return errors like 'Failed to sign in. Please check your network connection and try again.'
+
+<h3>Building</h3>
+To build the samples after you have applied the changes above, you can use the build/run option in Android Studio, or build directly from the command line if you prefer.
+
+**IMPORTANT** Ensure you have set the ANDROID_HOME environment variable.
+
+    cd /path/to/android-basic-samples
+    export ANDROID_HOME = /path/to/android/sdk
+    ./gradlew build
+
+<h2>Support</h2>
+
+First of all, take a look at our [troubleshooting guide](https://developers.google.com/games/services/android/troubleshooting). Most setup issues can be solved by following this guide.
+
+If your question is not answered by the troubleshooting guide, we encourage you to post your question to [stackoverflow.com](https://stackoverflow.com/questions/tagged/google-play-games). Our team answers questions there regularly.
+
+Samples written by [Bruno Oliveira](https://plus.google.com/102451193315916178828) with contributions from [Wolff](http://plus.google.com/+WolffDobson).* Feel free to add us to your circles on Google Plus and pester us to fix stuff that's broken or answer a question on stackoverflow :-)
+
+<h2>Special Thanks</h2>
+
+* To [ligi](http://github.com/ligi) for contributing the initial Gradle build files
+* To [bechhansen](https://github.com/bechhansen) for fixing a bug in GameHelper where the turn-based match was being lost when a non-Games client connected.
