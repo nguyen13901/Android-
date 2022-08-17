@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8f4ff"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="20dp"
+        >
+
+        <EditText
+            android:id="@+id/edt_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:enabled="false"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textAlignment="viewEnd"
+            android:textColor="#353535"
+            android:textSize="50sp" />
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:textSize="25sp"
+            android:textColor="#a5a5a3"
+            android:textAlignment="viewEnd"/>
+    </LinearLayout>
+    <GridLayout
+        android:id="@+id/grl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:columnCount="5"
+        android:rowCount="2">
+    </GridLayout>
+    <LinearLayout
+        android:id="@+id/grl_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp">
+
+        <GridLayout
+            android:id="@+id/grl_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            android:columnCount="4"
+            android:rowCount="2">
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/grl_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="fill"
+            android:columnCount="1"
+            android:rowCount="1">
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
