@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="dog"
+            type="com.example.dogapp.model.DogBreed" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.detailsFragment"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:src="@drawable/ic_baseline_image_24"
+            app:profileImage="@{dog.url}"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dog.name, default=Tên}"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="15dp"/>
+        <LinearLayout
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:layout_width="20pt"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_cake_24"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{dog.lifeSpan, default=Tuổi}"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:paddingHorizontal="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:layout_width="20pt"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{dog.bredFor, default=Giống}"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:paddingHorizontal="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:layout_width="20pt"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{dog.origin, default=Nguồn}"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:paddingHorizontal="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
